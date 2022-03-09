@@ -11,7 +11,7 @@ RUN apt-get -qqy update \
     && apt-get autoclean \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/*
-
+RUN apt-get update -y && apt-get install curl wget systemd-sysv -y
 RUN cp /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 
 COPY scripts/* /opt/bin/
